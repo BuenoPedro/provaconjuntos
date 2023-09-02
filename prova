@@ -1,0 +1,58 @@
+#guilherme kersting kissner
+#Pedro cerger bueno
+
+
+with open("aaa.txt", "r") as arquivo:
+	numero_operacao = int(arquivo.readline(1))
+	print(numero_operacao)
+
+contador_operacao = 1
+contador_operacao2 = 1
+
+with open("aaa.txt", "r") as arquivo:
+	operacao = arquivo.readlines()
+	print(operacao)
+
+for i in range(numero_operacao - 1):
+    if operacao[contador_operacao] == "U\n":
+        print("1!!!!")
+        operacao1 = set(operacao[contador_operacao2 + 1])
+        operacao2 = set(operacao[contador_operacao2 + 2])
+        print("uniao: conjunto 1",operacao[contador_operacao2 + 1])
+        print("conjunto 2", operacao[contador_operacao2 + 2])
+        if contador_operacao + 3 < len(operacao):
+            contador_operacao += 3
+            contador_operacao2 += 3
+        print("resultado: ")
+        print(operacao1 | operacao2)
+        
+
+    if operacao[contador_operacao] == "I\n":
+        print("2!!!!")
+        operacao1 = set(operacao[contador_operacao2 + 1])
+        operacao2 = set(operacao[contador_operacao2 + 2])
+        print("interssecao: conjunto 1",operacao[contador_operacao2 + 1])
+        print("conjunto 2", operacao[contador_operacao2 + 2])
+        if contador_operacao + 3 < len(operacao):
+            contador_operacao += 3
+            contador_operacao2 += 3
+        print("resutado: ")
+        print(operacao1 & operacao2)
+
+    if operacao[contador_operacao] == "D\n":
+        print("3!!!!")
+        operacao1 = set(operacao[contador_operacao2 + 1])
+        operacao2 = set(operacao[contador_operacao2 + 2])
+        print("diferenca: conjunto 1",operacao[contador_operacao2 + 1])
+        print("conjunto 2", operacao[contador_operacao2 + 2])
+        if contador_operacao + 3 < len(operacao):
+            contador_operacao += 3
+            contador_operacao2 += 3
+        print("resutado: ")
+        print(operacao1 - operacao2)
+
+cartesiano1 = {8,9,"s"}
+cartesiano2 = {10, "W" , "Z"}
+
+cartesiano = [{c1 , c2} for c1 in cartesiano1 for c2 in cartesiano2]
+print("produto cartesiano : conjunto 1 ", cartesiano1, "conjunto 2", cartesiano2, "resultado: ", cartesiano)
